@@ -20,6 +20,20 @@
 </script> 
 <body>
   
+<button id="iniciarMusica">Activar la Música</button>
+<audio id="miMusica" loop>
+  <source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // 2. En el JavaScript: Reproduce al hacer clic
+  document.getElementById('iniciarMusica').addEventListener('click', function() {
+    var musica = document.getElementById('miMusica');
+    musica.play();
+    // Opcional: Ocultar el botón después de la reproducción
+    this.style.display = 'none'; 
+  });
+</script>
 
     <audio autoplay loop>
         <source src="img/musica.mp3" type="audio/mpeg">
