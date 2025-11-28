@@ -12,7 +12,23 @@ body {
     min-height: 100vh;              /* Permite scroll */
 }
 
+h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 12px rgba(255, 180, 210, 0.9);
+    animation: glow 3s infinite alternate;
+}
 
+p {
+    font-size: 46px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    margin-bottom: 25px;
+}
 
 #particles {
     position: fixed;
@@ -120,23 +136,7 @@ body {
     }
 }
 
-h1 {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    text-shadow: 0 0 12px rgba(255, 180, 210, 0.9);
-    animation: glow 3s infinite alternate;
-}
 
-p {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-    margin-bottom: 25px;
-}
 
 
 /* —— BRILLOS SUAVES EN EL FONDO —— */
