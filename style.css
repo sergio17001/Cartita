@@ -42,7 +42,7 @@ p {
 }
 
 .imagen-sorpresa {
-    width: 100%;
+    width: 180%;
     display: flex;
     justify-content: center;
     margin-top: 40px;
