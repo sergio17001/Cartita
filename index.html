@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <title>Para mi princesa ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<canvas id="particles"></canvas>
+<audio id="musica" src="musica.mp3" loop></audio>
+
+<div id="corazones"></div>
+
+<script>
+    document.addEventListener("click", function() {
+        const audio = document.getElementById("musica");
+        audio.play().catch(() => {});
+    });
+</script> 
+<body>
+  
+
+    <audio autoplay loop>
+        <source src="img/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="mensaje">
+        <h1>Feliz cumpleaños, mi amor ❤️</h1>
+        <p>​Mi Amor, ¡Feliz Cumpleaños!
+​Hoy no solo celebramos un año más de tu vida, sino el día en que llegaste al mundo para hacerlo un lugar mucho más hermoso. Eres la persona más importante para mí.
+<p>
+​Eres mucho más que mi princesa: eres mi mejor amiga, mi confidente, la calma en mi caos y la chispa que enciende mis sueños. Para mí, eres mi sol, mi luna y todas mis estrellas. No hay un solo momento en el que no agradezca la suerte que tengo de compartir mi vida contigo.
+<p>
+​Quiero que sepas que mi amor por ti es profundo, inmenso e inquebrantable, más de lo que las palabras pueden expresar.
+<p>
+​Y si hay algo que tengo claro, es esto: Mi plan es simple. Quiero y deseo pasar el resto de mi vida a tu lado. Envejecer juntos, crear recuerdos inolvidables y seguir construyendo nuestro hogar. No hay otro lugar donde prefiera estar.
+<p>
+​Te amo con todo mi corazón. Hoy y por siempre. ¡Disfruta tu dia mi amor!</p>
+
+
+
+    </p>
+
+<br>
+    </div>
+    
+
+    
+    <div class="corazon-todo">
+    <div class="corazon-css"></div>
+    <div class="mini-corazones"></div>
+</div>
+    
+    
+    
+    <div class="imagen-sorpresa">
+    <img src="foto.jpg" alt="Momentito especial">
+</div>
+
+<script>
+function revelarImagen() {
+    const img = document.querySelector('.imagen-sorpresa');
+    const rect = img.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 100) {
+        img.style.opacity = "1";
+        img.style.transform = "translateY(0)";
+        window.removeEventListener("scroll", revelarImagen);
+    }
+}
+
+window.addEventListener("scroll", revelarImagen);
+</script>
+
+    <img src="corazon.gif" class="corazon" id="corazon">
+
+    <script src="script.js"></script>
+    
+    <div class="final" id="finalMensaje">
+    <h2>Y… aún hay algo más que quiero decirte 💖</h2>
+    <p><span>Dulce mirada, sin ti soy nada, tú eres mi todo, tú eres la pieza</span>
+        <p><span>Esa que encaja, la que faltaba, y a mi corazón lo complementas</span>
+       <p> <span>Si estás conmigo todo es perfecto, bellos momentos, nadie te llega</span>
+       <p> <span>Carita de ángel, corazón puro, bella por dentro y bella por fuera</span>
+        <p><span>Siento que la luna está celosa por cómo tú brillas</span>
+        <p><span>Ni un lunar te cambio, tú eres una entre un millón, mi vida</span>
+        <p><span>Si vieran lo que vi, tu hermoso sonreír</span>
+        <p><span>Ningún astronauta vuelve a buscar estrellas</span>
+        <p><span>Me gustas solo tú y nadie más que tú</span>
+        <span>Cómo decir que no a tus labios de cereza</span></p>
+</div>
+    <script>
+window.addEventListener("scroll", () => {
+    const final = document.getElementById("finalMensaje");
+    const rect = final.getBoundingClientRect();
+
+    if (rect.top < window.innerHeight - 100) {
+        final.classList.add("visible");
+    }
+});
+</script>
+
+
+
+<div id="glow-container"></div>
+
+<script>
+// —— GENERADOR DE BRILLOS SUAVES ——
+
+const glowContainer = document.getElementById("glow-container");
+
+function createGlow() {
+    const glow = document.createElement("div");
+    glow.classList.add("glow");
+
+    // Posición aleatoria en X
+    glow.style.left = Math.random() * 100 + "%";
+
+    // Posición aleatoria en Y
+    glow.style.top = Math.random() * 100 + "%";
+
+    // Tamaño aleatorio
+    const size = Math.random() * 60 + 40; 
+    glow.style.width = size + "px";
+    glow.style.height = size + "px";
+
+    // Duración de la animación
+    glow.style.animationDuration = (8 + Math.random() * 8) + "s";
+
+    glowContainer.appendChild(glow);
+
+    // Se elimina después de un tiempo
+    setTimeout(() => {
+        glow.remove();
+    }, 16000);
+}
+
+// Crear brillos constantemente
+setInterval(createGlow, 700);
+</script>
+
+<div class="glass-box">
+    <h2 class="shine-title">Feliz cumpleaños, mi amor</h2>
+    <p>Te amo 💖</p>
+
+    <!-- Partículas dentro de la caja -->
+    <div class="inner-particles"></div>
+</div>
+
+<script>
+/*** PARTÍCULAS ***/
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let hearts = [];
+
+function createHeart() {
+    hearts.push({
+        x: Math.random() * canvas.width,
+        y: canvas.height + 20,
+        size: 12 + Math.random() * 12,
+        alpha: 1,
+        speed: 0.6 + Math.random() * 1
+    });
+}
+
+function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    hearts.forEach((h, i) => {
+        h.y -= h.speed;
+        h.alpha -= 0.005;
+
+        ctx.fillStyle = `rgba(255,150,180,${h.alpha})`;
+        ctx.font = `${h.size}px Arial`;
+        ctx.fillText("❤️", h.x, h.y);
+
+        if (h.alpha <= 0) hearts.splice(i, 1);
+    });
+
+    requestAnimationFrame(animate);
+}
+
+setInterval(createHeart, 200);
+animate();
+
+/*** APARICIÓN AL HACER SCROLL ***/
+const lyricsBox = document.getElementById("lyrics-container");
+
+window.addEventListener("scroll", () => {
+    const rect = lyricsBox.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 150) {
+        lyricsBox.classList.remove("hidden");
+    }
+});
+</script>
+
+</body>
+</html>
